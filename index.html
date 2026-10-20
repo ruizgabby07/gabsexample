@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VMware Renewal 2027 | Livewire Cloud</title>
+  <meta name="description" content="Your VMware renewal is coming. Get a migration timeline built around your renewal date.">
+  <style>
+    :root {
+      --red: #d0021b;
+      --ink: #111;
+      --muted: #555;
+      --line: #e2e2e2;
+      --tint: #f4f4f4;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.5;
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    a { color: inherit; }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 0;
+      border-radius: 3px;
+      font: 600 14px/1 inherit;
+      font-family: inherit;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .btn-red { background: var(--red); color: #fff; }
+    .btn-white { background: #fff; color: var(--ink); }
+
+    /* Header */
+    header .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo { font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+
+    /* Hero */
+    .hero { background: var(--tint); padding: 64px 0; }
+    .hero .wrap {
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center;
+    }
+    .eyebrow {
+      color: var(--red); font-size: 12px; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase; margin: 0 0 12px;
+    }
+    h1 { font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin: 0 0 20px; }
+    .lede { color: var(--muted); font-size: 18px; margin: 0; max-width: 34em; }
+
+    .card {
+      background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 28px;
+    }
+    .card h2 { font-size: 20px; margin: 0 0 16px; }
+    .card label { display: block; font-size: 14px; margin: 12px 0 4px; }
+    .card input {
+      width: 100%; padding: 10px; font: inherit;
+      border: 1px solid #bbb; border-radius: 3px;
+    }
+    .card .btn { margin-top: 20px; width: 100%; padding: 14px; }
+    .thanks { display: none; margin: 16px 0 0; font-weight: 600; }
+
+    /* Steps */
+    .steps { padding: 72px 0; }
+    .steps h2 { font-size: 28px; margin: 0 0 28px; }
+    .step-list {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;
+      list-style: none; margin: 0; padding: 0;
+    }
+    .step-list li { border: 1px solid var(--line); padding: 20px; }
+    .step-list .num { color: var(--red); font-size: 13px; font-weight: 700; }
+    .step-list strong { display: block; margin: 8px 0 4px; }
+    .step-list span { color: var(--muted); font-size: 14px; }
+    .step-list li.final { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .step-list li.final span { color: #ccc; }
+
+    /* Stats */
+    .stats { background: var(--ink); color: #fff; padding: 48px 0; }
+    .stats .wrap { display: flex; gap: 72px; }
+    .stat b { display: block; color: var(--red); font-size: 40px; line-height: 1; }
+    .stat span { font-weight: 600; }
+
+    /* CTA band */
+    .cta { background: var(--red); color: #fff; padding: 36px 0; }
+    .cta .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .cta h2 { font-size: 26px; margin: 0; }
+
+    footer { padding: 24px 0 40px; color: var(--muted); font-size: 13px; }
+
+    @media (max-width: 860px) {
+      .hero .wrap { grid-template-columns: 1fr; }
+      .step-list { grid-template-columns: 1fr 1fr; }
+      .cta .wrap { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 520px) {
+      .wrap { padding: 0 16px; }
+      .logo { font-size: 14px; }
+      header .btn { padding: 8px 12px; font-size: 13px; }
+      .step-list { grid-template-columns: 1fr; }
+      .stats .wrap { flex-direction: column; gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="logo">Livewire Cloud</div>
+      <a class="btn btn-red" href="#timeline">Talk to an expert</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">For VMware customers renewing in March 2027</p>
+        <h1>Your VMware renewal is coming. Plan the move before it's due.</h1>
+        <p class="lede">Get a migration timeline built around your renewal date, from a team with 25+ years of migrations.</p>
+      </div>
+
+      <div class="card" id="timeline">
+        <h2>Get my migration timeline</h2>
+        <!-- Placeholder form: swap in the HubSpot form embed to capture leads. -->
+        <form id="timeline-form">
+          <label for="first">First name</label>
+          <input id="first" name="firstname" autocomplete="given-name" required>
+          <label for="last">Last name</label>
+          <input id="last" name="lastname" autocomplete="family-name" required>
+          <label for="company">Company</label>
+          <input id="company" name="company" autocomplete="organization" required>
+          <label for="email">Work email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <button class="btn btn-red" type="submit">Get my timeline</button>
+        </form>
+        <p class="thanks" id="thanks">Thanks. We'll send your migration timeline soon.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="wrap">
+      <h2>Work backward from your renewal date</h2>
+      <ol class="step-list">
+        <li><div class="num">01</div><strong>Assess</strong><span>Inventory workloads.</span></li>
+        <li><div class="num">02</div><strong>Design</strong><span>Plan the Proxmox build.</span></li>
+        <li><div class="num">03</div><strong>Pilot</strong><span>Test with a few VMs.</span></li>
+        <li><div class="num">04</div><strong>Migrate</strong><span>Move in waves.</span></li>
+        <li class="final"><div class="num">05</div><strong>Renewal date</strong><span>Ready on time.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="wrap">
+      <div class="stat"><b>25+</b><span>years of migrations</span></div>
+      <div class="stat"><b>24/7</b><span>partner support</span></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Don't wait for the renewal notice.</h2>
+      <a class="btn btn-white" href="#timeline">Get my migration timeline</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">&copy; Livewire Cloud</div>
+  </footer>
+
+  <script>
+    document.getElementById('timeline-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('thanks').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
